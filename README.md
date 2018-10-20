@@ -129,7 +129,8 @@ In order to view an already-in-use example of the project, please upload the fol
   - Database name: "onlineSuperMarket"
   - Collection "accounts.json"
   - Collection "categories.json"
-  - Collection "products.json"
+  - Collection "products.json"  
+  
 Create:  
   - Collection "carts.json"
   - Collection "orders.json"
