@@ -1,0 +1,25 @@
+{
+    "/users/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/store/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/cart/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "changeOrigin": true
+    },
+
+    "/orders/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
