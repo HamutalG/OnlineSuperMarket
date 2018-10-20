@@ -1,0 +1,17 @@
+<div class="mainContainer">
+    <div *ngIf="!isSessionOpen" class="bckgrndclr loginRegistered">
+        <app-login></app-login>
+    </div>
+    <div *ngIf="isSessionOpen" class="startShopping bckgrndclr">
+      
+        <h3 class="userName">{{user.firstName}} signed in!</h3><br/>
+
+        <button mat-raised-button id="startShoppingBtn" routerLink="startShopping">Start Shopping!</button>
+    </div>
+    <div class="aboutUs bckgrndclr">
+        <app-about-us></app-about-us>
+    </div>
+    <div class="homeTotals bckgrndclr">
+        <app-home-totals></app-home-totals>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="storeContainer">
+  <app-cart #customerCart id="customerCart" style="padding:0px 20px;" *ngIf="!checkUserRole()" [ngClass]="expanded ? 'cart bckgrndclr' : 'hidden bckgrndclr' "></app-cart>
+  <app-manager-form *ngIf="checkUserRole()" class="cart bckgrndclr"></app-manager-form>
+
+
+  <mat-tab-group *ngIf="!hasQuery && server.storeState" (selectedTabChange)="productsCategory($event)" class="products bckgrndclr">
+    <mat-tab *ngFor="let category of categories; let i = index" [label]="category">
+      <app-product *ngFor="let product of products" [isManager]="checkUserRole()" [product]="product"></app-product>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div *ngIf="hasQuery && !notFound && server.storeState" class="products bckgrndclr">
+    <app-product *ngFor="let product of searchProducts; let i = index" [product]="product"></app-product>
+  </div>
+  <div *ngIf="hasQuery && notFound && server.storeState" class="products bckgrndclr">
+    <p>No products match search term.</p>
+  </div>
+
+  <div [hidden]="server.storeState" class="products bckgrndclr">
+    <app-order-form (orderEmitter)="handleOrder($event)" ></app-order-form>
+  </div>
+
+</div>

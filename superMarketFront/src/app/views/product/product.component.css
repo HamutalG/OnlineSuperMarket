@@ -1,0 +1,10 @@
+.productImg {
+    width: 100px;
+}
+
+.eachProduct{
+    height: 200px;
+    margin: 20px;
+    display: block;
+    float: left;
+}

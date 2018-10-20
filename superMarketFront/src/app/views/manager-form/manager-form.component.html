@@ -1,0 +1,23 @@
+<h4 class="addEditTitle">Add/ Edit Products:</h4>
+<hr>
+<div class="formContainer" [formGroup]="managerFormGroup">
+  <mat-form-field>
+    <input matInput formControlName="productName" [(ngModel)]="productName" [value]="currentProduct ? currentProduct.name : null" required placeholder="Product Name: ">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-select formControlName="productCategory" [(ngModel)]="productCategory" [value]="currentProduct ? currentProduct.category : null" required placeholder="Select Category">
+      <mat-option value="Milk & Eggs">Milk & Eggs</mat-option>
+      <mat-option value="Vegetables & Fruits">Vegetables & Fruits</mat-option>
+      <mat-option value="Meat & Fish">Meat & Fish</mat-option>
+      <mat-option value="Wine & Drinks">Wine & Drinks</mat-option>
+    </mat-select>
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput formControlName="imgUrl" [value]="currentProduct ? currentProduct.image : null" required [(ngModel)]="imgURL" placeholder="Image URL: ">
+  </mat-form-field><br/>
+  <img *ngIf="imgURL" id="previewImg" [src]="imgURL" /><br/>
+  <mat-form-field>
+    <input matInput formControlName="productPrice" [(ngModel)]="productPrice" [value]="currentProduct ? currentProduct.price : null" required placeholder="Price: ">
+  </mat-form-field><br/><br/>
+  <button (click)="currentProduct ? updateProduct() : saveProduct()" mat-stroked-button color="primary">Save</button>
+</div>

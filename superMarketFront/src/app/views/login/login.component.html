@@ -1,0 +1,16 @@
+<div class="loginForm">
+  <h4>Registered?</h4><br/>
+  <mat-form-field>
+    <input matInput placeholder="Email" [value]="loginUsername" [(ngModel)]="loginUsername">
+  </mat-form-field>
+  <div id="emailError" *ngIf="emailHasError">{{ emailError }}</div>
+  <br/>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" [value]="loginPassword" [(ngModel)]="loginPassword" />
+  </mat-form-field>
+  <div id="passwordError" *ngIf="passHasError">{{ passwordError }}</div><br/>
+  <div>
+    <button class="loginBtn" (click)="loginUser()" mat-stroked-button>Login</button>
+    <a class="signUp" routerLink="register">Sign Up</a>
+  </div>
+</div>

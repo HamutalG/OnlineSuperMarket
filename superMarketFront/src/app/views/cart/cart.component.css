@@ -1,0 +1,49 @@
+.arrow{
+    font-size: 30px;
+    font-weight: bold;
+    display:block;
+    float:right;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.cartTitle {
+    min-width: 90px;
+    height: 100px;
+    position: absolute;
+    float: left;
+    padding: 0px;
+    left: 30px;
+    top: 20px;    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 80px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.cartInfo {
+    margin-top: 80px;
+    margin-left: 20px; 
+}
+
+.cartImage{
+    width: 45px;
+}

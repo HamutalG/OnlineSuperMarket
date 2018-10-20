@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-image: url('https://www.hopefordepression.org/wp-content/uploads/2018/06/fresh-fruits-and-vegetables1.jpg');
+}

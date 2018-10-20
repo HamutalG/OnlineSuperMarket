@@ -1,0 +1,31 @@
+.bckgrndclr{
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.loginRegistered, .aboutUs, .homeTotals{
+    border: solid 1px black;
+    padding: 50px;
+    min-width: 490px;
+    height: 550px;
+    margin-top: 20px;
+}
+
+#startShoppingBtn{
+    background-color: rgb(227, 242, 253);
+    color: rgb(34, 102, 159);
+    font-size: 110%;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}

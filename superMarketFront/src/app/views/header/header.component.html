@@ -1,0 +1,20 @@
+<nav [ngClass]="state === true ? 'navbar-main navbar-expand-lg navbar-light' : 'navbar-main2 navbar-expand-lg navbar-light'" >
+  <a class="navbar-brand" routerLink=""> <img class="logo" src="images/logo.png"></a>
+  <div *ngIf="state" class="search">
+    Search Product: <input (input)="searchInput($event.target.value)" placeholder="Product Name" />
+    <span><i class="fa fa-search"></i></span>
+  </div>
+  <div class="navbar navInfo">
+    <ul class="ml-auto">
+      <li>
+        <div class="nav-contact contactUs">Contact us! Phone: 08-8569562 | Email: contact@onlinesupermarket.com</div>
+      </li>
+      <li>
+        <div class="nav-hello hello">Hello {{ user ? user.firstName : 'Guest' }}</div>
+      </li><br/>
+      <li>
+        <a *ngIf="user" id="logout" (click)="logout()" routerLink="" class="nav-logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

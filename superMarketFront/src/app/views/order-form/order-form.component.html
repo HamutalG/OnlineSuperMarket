@@ -1,0 +1,33 @@
+<div class="products">
+  <h3>Order:</h3>
+  <hr>
+  <h5>Shipping Details:</h5>
+  <hr>
+  <form [formGroup]="orderFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-select placeholder="City" formControlName="city" required>
+        <mat-option *ngFor="let city of cities" [value]="city.value">
+          {{city.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field><br/>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Street" formControlName="street" required (dblclick)="applyUserInfo()">
+    </mat-form-field><br/>
+
+    <div>
+      <mat-form-field>
+        <input matInput readonly [matDatepicker]="picker" [matDatepickerFilter]="dateFilter()" [min]="today" [max]="nextMonth" placeholder="Pick Shipping Date"
+          formControlName="shippingDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <h5>Payments:</h5>
+    <hr>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Credit Card" formControlName="creditCard" required>
+    </mat-form-field><br/>
+    <button mat-stroked-button type="submit" [disabled]="!orderFormGroup.valid">Order</button>
+  </form>
+</div>

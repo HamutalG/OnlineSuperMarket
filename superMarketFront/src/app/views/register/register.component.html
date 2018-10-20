@@ -1,0 +1,53 @@
+<h3 style="color: white;">Please fill in your details:</h3>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Step 1</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="ID" formControlName="ID" required>
+      </mat-form-field><br/>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="username" required>
+      </mat-form-field>
+      <div id="emailError" *ngIf="emailHasError">{{ emailError }}</div><br/>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+      </mat-form-field><br/>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Confirm Password" formControlName="confimPassword" required>
+      </mat-form-field>
+      <div id="passwordError" *ngIf="passHasError">{{ passwordError }}</div><br/>
+      <div>
+        <button mat-stroked-button (click)="nextBtn(stepper)">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Step 2</ng-template>
+
+      <mat-form-field>
+        <mat-select placeholder="City" formControlName="city" required>
+          <mat-option *ngFor="let city of cities" [value]="city.value">
+            {{city.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br/>
+
+      <mat-form-field>
+        <input matInput placeholder="Street" formControlName="street" required>
+      </mat-form-field><br/>
+      <mat-form-field>
+        <input matInput placeholder="Frist Name" formControlName="firstName" required>
+      </mat-form-field><br/>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lastName" required>
+      </mat-form-field><br/>
+      <div>
+        <button style="margin:20px;" mat-stroked-button matStepperPrevious>Back</button>
+        <button style="margin:20px;" mat-stroked-button (click)="stepper.reset()">Reset</button>
+        <button style="margin:20px;" mat-stroked-button (click)="addAccount()">Done</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

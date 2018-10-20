@@ -1,0 +1,13 @@
+#previewImg {
+    width: 200px;
+}
+
+.formContainer{
+    min-width: 300px;
+    margin: 0px 0px 0px 70px;
+    position: absolute;
+}
+
+.addEditTitle {
+    margin: 20px 0px 0px 70px;
+}

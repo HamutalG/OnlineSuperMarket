@@ -1,0 +1,15 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.products {
+    margin: 20px 50px 0px 50px;
+    flex: 3;
+    align-items: center;
+    min-width: 300px;
+    position: relative;
+
+}

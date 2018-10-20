@@ -1,0 +1,5 @@
+<div (click)="isManager ? showInfo() : openDialog()" class="eachProduct">
+  <img class="productImg" [src]="product.image" alt="product image"/>
+  <h5>{{product.name}}</h5>
+  <h6>Price: {{product.price}} ₪</h6>
+</div>

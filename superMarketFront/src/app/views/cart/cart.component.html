@@ -1,0 +1,47 @@
+<h4 *ngIf="expanded" class="cartTitle" innerHtml="{{server.storeState ? 'My Cart:' : 'My Order:'}}" ></h4>
+
+<i [hidden]="!server.storeState" (click)="hideOrShow($event)" [ngClass]="expanded ? 'fa fa-angle-left arrow expanded' : 'fa fa-angle-right arrow hidden'"></i>
+
+
+<table *ngIf="currentCart && expanded && currentCart.products.length>0">
+  <tr>
+    <th [hidden]="!server.storeState"><i class="fa fa-trash"></i></th>
+    <th>Image</th>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let product of currentCart.products">
+    <td [hidden]="!server.storeState">
+      <strong class="delCartItem" (click)="deleteCartItem($event)">X</strong>
+    </td>
+    <td>
+      <img class="cartImage" [src]="product.image">
+    </td>
+
+    <td>
+      {{product.name}}
+    </td>
+
+    <td>
+      {{product.quantity}}
+    </td>
+
+    <td>
+      {{product.price}} ₪
+    </td>
+  </tr>
+</table>
+
+<div class="cartInfo" *ngIf="expanded && (!currentCart || !(currentCart.products.length>0))">Your cart is empty.</div>
+<br/><br/>
+
+<div *ngIf="expanded && (currentCart? currentCart.products.length > 0 : false) ">Total: {{currentCart.totalPrice}} ₪</div>
+<button *ngIf="expanded && (currentCart && server.storeState || server.storeState && (currentCart)? currentCart.products.length>0 : false )" style="float:right;"
+ (click)="server.storeState = !server.storeState" mat-stroked-button>Order</button>
+
+ <button id="backToStoreBtn" [hidden]="server.storeState" (click)="server.storeState = !server.storeState" mat-stroked-button style="float:right;">Back To Store</button>
+
+
+
+
