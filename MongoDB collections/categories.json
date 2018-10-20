@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5b8a9bc24130b33cc8183781"},"name":"Milk & Eggs"}
+{"_id":{"$oid":"5b8a9be34130b33cc8183782"},"name":"Vegetables & Fruits"}
+{"_id":{"$oid":"5b8a9c004130b33cc8183783"},"name":"Meat & Fish"}
+{"_id":{"$oid":"5b8a9c0e4130b33cc8183784"},"name":"Wine & Drinks"}

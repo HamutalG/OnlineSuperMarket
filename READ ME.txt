@@ -1,0 +1,1 @@
+In order to run the project (using proxy), please use "npm start" to run the front as well as the back project folders. 
