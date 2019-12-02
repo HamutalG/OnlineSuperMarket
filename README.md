@@ -1,4 +1,4 @@
-# [Online SuperMarket](http://18.224.80.50:3000/)
+# Online SuperMarket
 #### Angular - NodeJs - MongoDB
 
 An online supermarket web application that was created as a self-service store selling food and groceries.  
